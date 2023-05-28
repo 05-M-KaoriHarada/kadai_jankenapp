@@ -18,24 +18,26 @@
   <!-- スタートボタン -->
   <button id="start" class="flex mx-auto text-white bg-green-500 border-0 py-3 px-20 focus:outline-none rounded text-lg m-6">ゲームスタート</button>
 
+  <!-- くまの手 -->
   <div>
-    <span>じゃん</span>
-    <span>けん</span>
-    <span id="pc_hands" ><img src="watermark.png" width=250></span>
+    <span class="flex justify-center text-xl">じゃーんけん</span>
+    <span id="pc_hands" class="flex justify-center" ><img src="watermark.png" width=250></span>
   </div>
 
-  <div class="mt-5 p-3 bg-green-200">
+  <div class=" mt-5 p-3 bg-green-200">
     <p>負けの手はどれ？</p>
-    <div class="flex">    
+    <div class="flex justify-center">    
         <button id="mygu_btn"><img src="mygu.png" width=120></button>
         <button id="mychoki_btn"><img src="mychoki.png" width=120></button>
-        <button id="mypar_btn"><img src="mypa.png" width=120></button>
+        <button id="mypa_btn"><img src="mypa.png" width=120></button>
     </div>
   </div>
 
-<div id="judgement"></div>
+<div id="judgement" class="font-bold text-2xl flex justify-center"></div>
 
-  <footer></footer>
+  <footer>
+    <button class="border-2 m-5 p-1 rounded"><a href="">もういちど挑戦する</a></button>
+  </footer>
   <script>
   //PCの手をランダムに表示
   $("#start").on("click", function(){
@@ -56,10 +58,10 @@
     $("#mygu_btn").on("click", function(){
       let judgement =""
       if(r == 1){
-        judgement = "残念！"
+        judgement = "残念..."
       }
       if(r == 2){
-        judgement = "残念！"
+        judgement = "残念..."
       }
       if(r == 3){
         judgement = "正解！"
@@ -73,10 +75,10 @@
         judgement = "正解！"
       }
       if(r == 2){
-        judgement = "残念！"
+        judgement = "残念..."
       }
       if(r == 3){
-        judgement = "残念！"
+        judgement = "残念..."
       }    
       $("#judgement").html(judgement)
     });
@@ -84,28 +86,19 @@
     $("#mypa_btn").on("click", function(){
       let judgement =""
       if(r == 1){
-        judgement = "残念！"
+        judgement = "残念..."
       }
       if(r == 2){
         judgement = "正解！"
       }
       if(r == 3){
-        judgement = "残念！"
+        judgement = "残念..."
       }    
       $("#judgement").html(judgement)
     });
 
   });
-
-  
-
   </script>
-
-
-
-
-
-
 
 </body>
 </html>
